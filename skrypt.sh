@@ -19,3 +19,11 @@ if [ "$1" == "--logs" ] && [ -n "$2" ]; then
         echo "Data: $(date)" >> log$i.txt
     done
 fi
+
+if [ "$1" == "--help" ]; then
+    echo "--date   wyświetla dzisiejszą datę"
+    echo "--logs   tworzy 100 plików log.txt"
+    echo "--logs n tworzy n plików log.txt"
+    echo "--help   wyświetla dostępne opcje"
+fi
+
