@@ -21,10 +21,13 @@ if ([ "$1" == "--logs" ] || [ "$1" == "-l" ]) && [ -n "$2" ]; then
 fi
 
 if [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
-    echo "--date  -d   wyświetla dzisiejszą datę"
-    echo "--logs  -l   tworzy 100 plików log"
-    echo "--logs  -l N tworzy N plików log"
-    echo "--help  -h   wyświetla dostępne opcje"
+    echo "--date   -d      wyświetla dzisiejszą datę"
+    echo "--logs   -l      tworzy 100 plików log"
+    echo "--logs   -l n    tworzy n plików log"
+    echo "--init          klonuje repo i ustawia PATH"
+    echo "--error  -e      tworzy 100 folderów error"
+    echo "--error  -e n    tworzy n folderów error"
+    echo "--help   -h      wyświetla dostępne opcje"
 fi
 
 if [ "$1" == "--init" ]; then
