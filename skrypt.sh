@@ -1,18 +1,18 @@
-
 #!/bin/bash
-if [ "$1" == "--date" ]; then
+
+if [ "$1" == "--date" ] || [ "$1" == "-d" ]; then
     date
 fi
 
-if [ "$1" == "--logs" ] && [ -z "$2" ]; then
+if ([ "$1" == "--logs" ] || [ "$1" == "-l" ]) && [ -z "$2" ]; then
     for i in $(seq 1 100); do
-        echo "Nazwa pliku: log$i.txt" >log$i.txt
-        echo "Nazwa skryptu: skrypt.sh" >>log$i.txt
-        echo "Data: $(date)" >>log$i.txt
+        echo "Nazwa pliku: log$i.txt" > log$i.txt
+        echo "Nazwa skryptu: skrypt.sh" >> log$i.txt
+        echo "Data: $(date)" >> log$i.txt
     done
 fi
 
-if [ "$1" == "--logs" ] && [ -n "$2" ]; then
+if ([ "$1" == "--logs" ] || [ "$1" == "-l" ]) && [ -n "$2" ]; then
     for i in $(seq 1 $2); do
         echo "Nazwa pliku: log$i.txt" > log$i.txt
         echo "Nazwa skryptu: skrypt.sh" >> log$i.txt
@@ -20,10 +20,9 @@ if [ "$1" == "--logs" ] && [ -n "$2" ]; then
     done
 fi
 
-if [ "$1" == "--help" ]; then
-    echo "--date   wyświetla dzisiejszą datę"
-    echo "--logs   tworzy 100 plików log.txt"
-    echo "--logs n tworzy n plików log.txt"
-    echo "--help   wyświetla dostępne opcje"
+if [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
+    echo "--date  -d   wyświetla dzisiejszą datę"
+    echo "--logs  -l   tworzy 100 plików log"
+    echo "--logs  -l N tworzy N plików log"
+    echo "--help  -h   wyświetla dostępne opcje"
 fi
-
