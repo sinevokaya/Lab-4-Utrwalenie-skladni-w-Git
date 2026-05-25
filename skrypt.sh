@@ -26,3 +26,9 @@ if [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
     echo "--logs  -l N tworzy N plików log"
     echo "--help  -h   wyświetla dostępne opcje"
 fi
+
+if [ "$1" == "--init" ]; then
+    git clone https://github.com/sinevokaya/Lab-4-Utrwalenie-skladni-w-Git.git
+    export PATH=$PATH:/Users/kasiasiniewicz/Lab-4-Utrwalenie-skladni-w-Git
+fi
+
